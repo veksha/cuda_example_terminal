@@ -335,10 +335,11 @@ class Terminal:
             pass
             #print(key)
         else:
-            if 0:pass
+            if 0:
+                pass
             elif data == 'c':
                 if 0:pass # ctrl + key
-                elif 65 <= key <= 90:
+                elif ord('A') <= key <= ord('Z'):
                     self.write(chr(key-64))
                     return False
                 elif key == keys.VK_LEFT:
