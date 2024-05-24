@@ -350,10 +350,10 @@ class Terminal:
                 elif key == ord('C') and opt_ctrl_c:
                     self.memo.cmd(cmds.cCommand_ClipboardCopy)
                     return False
-                elif key == ord('X') and opt_ctrl_x:
-                    self.memo.cmd(cmds.cCommand_ClipboardCopy)
-                    self.write(ctrl.ESC) # what is needed here?
-                    return False
+#                elif key == ord('X') and opt_ctrl_x:
+#                    self.memo.cmd(cmds.cCommand_ClipboardCopy)
+#                    self.write() # how to delete selected text in terminal?
+#                    return False
                 elif key == ord('V') and opt_ctrl_v:
                     self.write(app_proc(PROC_GET_CLIP, ''))
                     return False
