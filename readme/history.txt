@@ -1,3 +1,6 @@
+2024.05.24
+- fix: keys Home/End on Windows (fix by @arakel2)
+
 2024.02.12
 - fix: disabled some memo props and tweaked caret view
 
