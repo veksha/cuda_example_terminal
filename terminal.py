@@ -58,6 +58,14 @@ key_map = {
     keys.VK_F12: ctrl.ESC+'[24~'
 }
 
+CONFIG_FN = os.path.join(app_path(APP_DIR_SETTINGS), 'plugins.ini')
+CONFIG_SECTION = 'exterminal'
+
+opt_ctrl_c = int(ini_read(CONFIG_FN, CONFIG_SECTION, 'ctrl_c', '0'))
+opt_ctrl_v = int(ini_read(CONFIG_FN, CONFIG_SECTION, 'ctrl_v', '0'))
+opt_ctrl_x = int(ini_read(CONFIG_FN, CONFIG_SECTION, 'ctrl_x', '0'))
+
+
 class Terminal:
     themed = False
     font_size = 11
@@ -339,6 +347,16 @@ class Terminal:
                 pass
             elif data == 'c':
                 if 0:pass # ctrl + key
+                elif key == ord('C') and opt_ctrl_c:
+                    self.memo.cmd(cmds.cCommand_ClipboardCopy)
+                    return False
+                elif key == ord('X') and opt_ctrl_x:
+                    self.memo.cmd(cmds.cCommand_ClipboardCopy)
+                    self.write(ctrl.ESC) # what is needed here?
+                    return False
+                elif key == ord('V') and opt_ctrl_v:
+                    self.write(app_proc(PROC_GET_CLIP, ''))
+                    return False
                 elif ord('A') <= key <= ord('Z'):
                     self.write(chr(key-64))
                     return False
