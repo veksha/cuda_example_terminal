@@ -1,6 +1,6 @@
 2024.05.24
-+ add: option in plugins.ini "ctrl_c", default is '0', you can change it to '1' to enable Ctrl+C hotkey in terminal (by @arakel2)
-+ add: option in plugins.ini "ctrl_v", default is '0', you can change it to '1' to enable Ctrl+V hotkey in terminal (by @arakel2)
++ add: option in plugins.ini "ctrl_c", set to '1' to enable Ctrl+C hotkey in terminal (by @arakel2)
++ add: option in plugins.ini "ctrl_v", set to '1' to enable Ctrl+V hotkey in terminal (by @arakel2)
 - fix: keys Home/End on Windows (by @arakel2)
 
 2024.02.12
