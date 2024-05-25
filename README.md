@@ -15,7 +15,7 @@ Advantages over Terminal+ plugin:
 
 # Configuration file
 
-Menu "Options / Settings-plugins / ExTerminal / Config", \[exterminal\] section.
+Menu item "Options / Settings-plugins / ExTerminal / Config", it opens file 'plugins.ini' with `[exterminal]` section.
 
 Setting               | Possible values            | Description
 ----------------------|----------------------------|----------------------------
@@ -24,6 +24,6 @@ colors                | 0,1                        | enable terminal colors. (sl
 esc_focuses_editor    | 0,1                        | focus editor by pressing ESC key instead of sending it to terminal. Disabled by default. <br> Hint: Ctrl+[ key sends ESC code to the terminal, you can use it instead of ESC key
 show_caption          | 0,1                        | show terminal header (title)
 themed                | 0,1                        | use theme colors
-ctrl_c                | 0,1                        | disable / enable Ctrl+C in terminal
-ctrl_x                | 0,1                        | disable / enable Ctrl+X in terminal
-ctrl_v                | 0,1                        | disable / enable Ctrl+V in terminal
+ctrl_c                | 0,1                        | enable Ctrl+C (copy) in terminal
+ctrl_x                | 0,1                        | enable Ctrl+X (cut) in terminal
+ctrl_v                | 0,1                        | enable Ctrl+V (paste) in terminal
