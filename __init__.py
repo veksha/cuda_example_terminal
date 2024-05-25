@@ -206,7 +206,7 @@ class Command:
             t = self.get_active_terminal()
             if t:
                 self.show_terminal(t)
-                t.write('cd '+head+'\r')
+                t.write('cd "'+head+'"\r')
 
     def toggle_focus(self):
         if len(self.terminals) == 0:
