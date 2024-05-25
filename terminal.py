@@ -58,23 +58,19 @@ key_map = {
     keys.VK_F12: ctrl.ESC+'[24~'
 }
 
-CONFIG_FN = os.path.join(app_path(APP_DIR_SETTINGS), 'plugins.ini')
-CONFIG_SECTION = 'exterminal'
-
-opt_ctrl_c = int(ini_read(CONFIG_FN, CONFIG_SECTION, 'ctrl_c', '0'))
-opt_ctrl_v = int(ini_read(CONFIG_FN, CONFIG_SECTION, 'ctrl_v', '0'))
-opt_ctrl_x = int(ini_read(CONFIG_FN, CONFIG_SECTION, 'ctrl_x', '0'))
-
 
 class Terminal:
     themed = False
     font_size = 11
-    def __init__(self, name, shell_str, esc_focuses_editor, fn_icon, colors, show_caption):
+    def __init__(self, name, shell_str, esc_focuses_editor, fn_icon, colors, show_caption, ctrl_c, ctrl_v, ctrl_x):
         self.name = name
         self.opt_esc_focuses_editor = esc_focuses_editor
         self.fn_icon = fn_icon
         self.opt_colors = colors
         self.opt_show_caption = show_caption
+        self.opt_ctrl_c = ctrl_c
+        self.opt_ctrl_v = ctrl_v
+        self.opt_ctrl_x = ctrl_x
 
         self.visible_columns = 0
         self.visible_lines = 0
@@ -347,14 +343,14 @@ class Terminal:
                 pass
             elif data == 'c':
                 if 0:pass # ctrl + key
-                elif key == ord('C') and opt_ctrl_c:
+                elif key == ord('C') and self.opt_ctrl_c:
                     self.memo.cmd(cmds.cCommand_ClipboardCopy)
                     return False
-#                elif key == ord('X') and opt_ctrl_x:
-#                    self.memo.cmd(cmds.cCommand_ClipboardCopy)
-#                    self.write() # how to delete selected text in terminal?
-#                    return False
-                elif key == ord('V') and opt_ctrl_v:
+                elif key == ord('X') and self.opt_ctrl_x:
+                    self.memo.cmd(cmds.cCommand_ClipboardCopy)
+                    self.write(ctrl.ESC)
+                    return False
+                elif key == ord('V') and self.opt_ctrl_v:
                     self.write(app_proc(PROC_GET_CLIP, ''))
                     return False
                 elif ord('A') <= key <= ord('Z'):

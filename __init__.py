@@ -39,6 +39,9 @@ opt_colors = False
 opt_esc_focuses_editor = False
 opt_show_caption = False
 opt_themed = False
+opt_ctrl_c = False
+opt_ctrl_x = False
+opt_ctrl_v = False
 
 def str_to_bool(s): return s=='1'
 def bool_to_str(v): return '1' if v else '0'
@@ -68,10 +71,16 @@ class Command:
         global opt_esc_focuses_editor
         global opt_show_caption
         global opt_themed
+        global opt_ctrl_c
+        global opt_ctrl_x
+        global opt_ctrl_v
         opt_colors   = str_to_bool(ini_read(ini, section, 'colors',   '0'))
         opt_esc_focuses_editor = str_to_bool(ini_read(ini, section, 'esc_focuses_editor', '0'))
         opt_show_caption = str_to_bool(ini_read(ini, section, 'show_caption', '0'))
         opt_themed = str_to_bool(ini_read(ini, section, 'themed', '0'))
+        opt_ctrl_c = str_to_bool(ini_read(ini, section, 'ctrl_c', '0'))
+        opt_ctrl_x = str_to_bool(ini_read(ini, section, 'ctrl_x', '0'))
+        opt_ctrl_v = str_to_bool(ini_read(ini, section, 'ctrl_v', '0'))
 
     def save_ops(self, only_size=False):
         ini_write(ini, section, 'shell_windows', self.shell_win)
@@ -81,6 +90,9 @@ class Command:
         ini_write(ini, section, 'esc_focuses_editor', bool_to_str(opt_esc_focuses_editor))
         ini_write(ini, section, 'show_caption', bool_to_str(opt_show_caption))
         ini_write(ini, section, 'themed', bool_to_str(opt_themed))
+        ini_write(ini, section, 'ctrl_c', bool_to_str(opt_ctrl_c))
+        ini_write(ini, section, 'ctrl_x', bool_to_str(opt_ctrl_x))
+        ini_write(ini, section, 'ctrl_v', bool_to_str(opt_ctrl_v))
 
     def config(self):
         self.save_ops()
@@ -117,7 +129,15 @@ class Command:
 
         self.terminal_id += 1
         t = Terminal("ExTerminal {}".format(self.terminal_id),
-            self.shell_str, opt_esc_focuses_editor, fn_icon, opt_colors, opt_show_caption)
+            self.shell_str,
+            opt_esc_focuses_editor,
+            fn_icon,
+            opt_colors,
+            opt_show_caption,
+            opt_ctrl_c,
+            opt_ctrl_v,
+            opt_ctrl_x
+            )
         t.form_show_callback = self.form_show_callback
         t.open()
         if focus:
