@@ -1,4 +1,5 @@
 2024.05.24
++ add: command "CD to current file's direcytory" (by @arakel2)
 + add: option in plugins.ini "ctrl_c", set to '1' to enable Ctrl+C hotkey in terminal (by @arakel2)
 + add: option in plugins.ini "ctrl_x"
 + add: option in plugins.ini "ctrl_v"
