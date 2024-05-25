@@ -41,6 +41,10 @@ section=commands
 caption=ExTerminal\Toggle focus terminal/editor
 method=toggle_focus
 
+[item7]
+section=commands
+caption=ExTerminal\CD to current file's directory
+method=cd_current_file_directory
 
 [bottombar1]
 hint=ExTerminal 1

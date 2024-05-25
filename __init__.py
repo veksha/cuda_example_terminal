@@ -199,6 +199,15 @@ class Command:
                 self.show_terminal(t)
                 t.write('"'+fn+'"\r')
 
+    def cd_current_file_directory(self):
+        fn = ed.get_filename()
+        head, tail = os.path.split(fn)
+        if fn:
+            t = self.get_active_terminal()
+            if t:
+                self.show_terminal(t)
+                t.write('cd '+head+'\r')
+
     def toggle_focus(self):
         if len(self.terminals) == 0:
             self.ensure_at_least_one_terminal(focus=True)
