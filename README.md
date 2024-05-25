@@ -1,12 +1,11 @@
 # ExTerminal
 
 Advantages over Terminal+ plugin:
- - `ExTerminal` tries to mimic real interactive terminal behaviour.
+
+- `ExTerminal` tries to mimic real interactive terminal behaviour.
  That means that you can use apps like nano/vim/htop/python inside it.
- - ...
 
-
-# Commands in "Plugins" menu:
+# Commands in "Plugins / ExTerminal" menu:
 
 - New terminal
 - Close all terminals
@@ -17,7 +16,7 @@ Advantages over Terminal+ plugin:
 
 # Configuration file
 
-Menu item "Options / Settings-plugins / ExTerminal / Config", it opens file "plugins.ini" with `[exterminal]` section.
+Menu item "Options / Settings-plugins / ExTerminal / Config" opens file "plugins.ini" with `[exterminal]` section.
 
 Setting               | Possible values            | Description
 ----------------------|----------------------------|----------------------------
