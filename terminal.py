@@ -148,6 +148,12 @@ class Terminal:
 
         self.set_theme_colors()
 
+    def del_sel(self):
+        x, y, x1, y1 = self.memo.get_carets()[0]
+        code = key_map[keys.VK_DELETE if x>x1 else keys.VK_BACKSPACE]
+        for i in range(abs(x-x1)):
+            self.write(code)
+
     def set_theme_colors(self):
         self.memo.set_prop(PROP_THEMED, Terminal.themed)
         if Terminal.themed:
@@ -348,7 +354,7 @@ class Terminal:
                     return False
                 elif key == ord('X') and self.opt_ctrl_x:
                     self.memo.cmd(cmds.cCommand_ClipboardCopy)
-                    self.write(ctrl.ESC)
+                    self.del_sel()
                     return False
                 elif key == ord('V') and self.opt_ctrl_v:
                     self.write(app_proc(PROC_GET_CLIP, ''))
