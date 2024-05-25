@@ -23,8 +23,9 @@ Options:
     Disabled by default.
 - show_caption: show terminal header (title). Disabled by default.
 - themed: use theme colors. Disabled by default.
-- ctrl_c: set to '1' to enable Ctrl+C hotkey in terminal.
-- ctrl_v: set to '1' to enable Ctrl+V hotkey in terminal.
+- ctrl_c: set to '1' to enable Ctrl+C (Copy) hotkey in terminal.
+- ctrl_x: set to '1' to enable Ctrl+X (Cut) hotkey in terminal.
+- ctrl_v: set to '1' to enable Ctrl+V (Paste) hotkey in terminal.
 
 Questions and Answers:
     Q: What if I will shut down the shell by typing `exit` command?
