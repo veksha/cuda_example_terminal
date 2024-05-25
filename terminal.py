@@ -150,6 +150,7 @@ class Terminal:
 
     def del_sel(self):
         x, y, x1, y1 = self.memo.get_carets()[0]
+        if y1<0: return
         code = key_map[keys.VK_DELETE if x>x1 else keys.VK_BACKSPACE]
         for i in range(abs(x-x1)):
             self.write(code)
