@@ -24,3 +24,6 @@ colors                | 0,1                        | enable terminal colors. (sl
 esc_focuses_editor    | 0,1                        | focus editor by pressing ESC key instead of sending it to terminal. Disabled by default. <br> Hint: Ctrl+[ key sends ESC code to the terminal, you can use it instead of ESC key
 show_caption          | 0,1                        | show terminal header (title)
 themed                | 0,1                        | use theme colors
+ctrl_c                | 0,1                        | disable / enable Ctrl+C in terminal
+ctrl_x                | 0,1                        | disable / enable Ctrl+X in terminal
+ctrl_v                | 0,1                        | disable / enable Ctrl+V in terminal
