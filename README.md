@@ -6,16 +6,18 @@ Advantages over Terminal+ plugin:
  - ...
 
 
-# Commands:
+# Commands in "Plugins" menu:
+
 - New terminal
 - Close all terminals
 - Run selection from editor
 - Run current file
 - Toggle focus terminal/editor
+- CD to current file's directory
 
 # Configuration file
 
-Menu item "Options / Settings-plugins / ExTerminal / Config", it opens file 'plugins.ini' with `[exterminal]` section.
+Menu item "Options / Settings-plugins / ExTerminal / Config", it opens file "plugins.ini" with `[exterminal]` section.
 
 Setting               | Possible values            | Description
 ----------------------|----------------------------|----------------------------
